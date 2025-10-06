@@ -13,6 +13,18 @@
       .caso p {
         margin: 0.3rem 0;
       }
+      table {
+        border-collapse: collapse;
+      }
+      table th,
+      table td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: center;
+      }
+      table thead {
+        background-color: #f2f2f2;
+      }
     </style>
   </head>
   <body>
@@ -33,7 +45,7 @@
           A <strong>Escala de Coma de Glasgow (ECG)</strong> foi criada em 1974
           e é usada para avaliar o <strong>nível de consciência</strong> de um
           paciente após traumas, AVC, TCE ou qualquer situação neurológica
-          grave. Ela mede <em>como o cérebro reage a estímulos</em> — e quanto
+          grave. Ela mede <em>como o cérebro reage a estímulos</em> — quanto
           maior a pontuação, melhor a resposta neurológica.
         </p>
 
@@ -55,13 +67,8 @@
 
         <h4>Resumo rápido da pontuação</h4>
         <div style="overflow-x: auto">
-          <table
-            border="1"
-            cellpadding="8"
-            cellspacing="0"
-            style="border-collapse: collapse; width: 100%; text-align: center"
-          >
-            <thead style="background-color: #f2f2f2">
+          <table style="width: 100%">
+            <thead>
               <tr>
                 <th>Categoria</th>
                 <th>Resposta</th>
@@ -179,78 +186,17 @@
             <strong>midríase bilateral</strong> pode indicar morte encefálica.
           </li>
         </ul>
+
         <p>
           Lembre-se: pacientes <strong>intubados</strong> não têm resposta
           verbal testável (marque <em>NT</em>).
         </p>
 
-        <hr />
-
-        <!-- Atividade OVM -->
-        <h3>Atividade: Avaliação da Escala de Glasgow</h3>
-
-        <div class="caso">
-          <p>
-            <strong>Caso 1:</strong> Paciente acorda com chamado, fala de forma
-            confusa e obedece comandos.
-          </p>
-          <button onclick="mostrarResposta('resposta1')">
-            Mostrar resposta
-          </button>
-          <p id="resposta1" style="display: none">
-            ✅ Resposta: O3 V4 M6 → 13 (leve)
-          </p>
-        </div>
-
-        <div class="caso" style="margin-top: 1rem">
-          <p>
-            <strong>Caso 2:</strong> Paciente sem fala, sem abertura ocular e
-            extensão dos braços à dor.
-          </p>
-          <button onclick="mostrarResposta('resposta2')">
-            Mostrar resposta
-          </button>
-          <p id="resposta2" style="display: none">
-            ✅ Resposta: O1 V1 M2 → 4 (grave)
-          </p>
-        </div>
-
-        <div class="caso" style="margin-top: 1rem">
-          <p>
-            <strong>Caso 3:</strong> Paciente intubado, abre olhos à dor e
-            localiza o estímulo com o braço.
-          </p>
-          <button onclick="mostrarResposta('resposta3')">
-            Mostrar resposta
-          </button>
-          <p id="resposta3" style="display: none">
-            ✅ Resposta: O2 V(NT) M5 → 8 (grave)
-          </p>
-        </div>
-
-        <div class="caso" style="margin-top: 1rem">
-          <p>
-            <strong>Caso 4:</strong> Paciente fala adequadamente, abre os olhos
-            espontaneamente e obedece comandos.
-          </p>
-          <button onclick="mostrarResposta('resposta4')">
-            Mostrar resposta
-          </button>
-          <p id="resposta4" style="display: none">
-            ✅ Resposta: O4 V5 M6 → 15 (normal)
-          </p>
-        </div>
-
-        <hr />
-
-        <!-- Avaliação Pupilar -->
-        <h3>Avaliação das Pupilas (GCS-P)</h3>
+        <h3>Avaliação das Pupilas (ECG-P)</h3>
         <p>
-          Além da pontuação OVM, a
-          <strong>Escala de Coma de Glasgow Modificada (GCS-P)</strong>
-          considera a resposta pupilar:
+          A <strong>ECG-P</strong> combina a pontuação OVM com avaliação
+          pupilar. Subtraia o valor pupilar da pontuação total OVM:
         </p>
-
         <div
           style="
             display: flex;
@@ -259,17 +205,8 @@
             align-items: flex-start;
           "
         >
-          <table
-            border="1"
-            cellpadding="8"
-            cellspacing="0"
-            style="
-              border-collapse: collapse;
-              text-align: center;
-              min-width: 250px;
-            "
-          >
-            <thead style="background-color: #f2f2f2">
+          <table style="min-width: 250px">
+            <thead>
               <tr>
                 <th>Resposta Pupilar</th>
                 <th>Valor a abater</th>
@@ -290,7 +227,6 @@
               </tr>
             </tbody>
           </table>
-
           <img
             src="./pupilas.jpg"
             alt="Exemplo de avaliação pupilar"
@@ -302,57 +238,146 @@
             "
           />
         </div>
-
-        <p>
-          A pontuação pupilar deve ser subtraída da soma total OVM para obter a
-          pontuação final GCS-P. Exemplo: se OVM = 13 e a resposta pupilar é
-          parcial (1), GCS-P = 13 − 1 = 12.
-        </p>
-
-        <h3>Atividade: Avaliação Pupilar</h3>
-
-        <div class="caso">
-          <p>
-            <strong>Caso Pupilar 1:</strong> Paciente reage com apenas uma
-            pupila à luz.
-          </p>
-          <button onclick="mostrarResposta('pupila1')">Mostrar resposta</button>
-          <p id="pupila1" style="display: none">
-            ✅ Resposta: Parcial → abater 1 ponto da pontuação OVM
-          </p>
-        </div>
-
-        <div class="caso" style="margin-top: 1rem">
-          <p>
-            <strong>Caso Pupilar 2:</strong> Nenhuma pupila reage ao estímulo de
-            luz.
-          </p>
-          <button onclick="mostrarResposta('pupila2')">Mostrar resposta</button>
-          <p id="pupila2" style="display: none">
-            ✅ Resposta: Inexistente → abater 2 pontos da pontuação OVM
-          </p>
-        </div>
-
-        <div class="caso" style="margin-top: 1rem">
-          <p>
-            <strong>Caso Pupilar 3:</strong> Ambas as pupilas reagem normalmente
-            à luz.
-          </p>
-          <button onclick="mostrarResposta('pupila3')">Mostrar resposta</button>
-          <p id="pupila3" style="display: none">
-            ✅ Resposta: Completa → abater 0 pontos da pontuação OVM
-          </p>
-        </div>
+        <p>Exemplo: OVM = 13, pupilar parcial ECG-P = 13 − 1 = 12</p>
 
         <hr />
 
-        <h3>💡 Dica final</h3>
-        <p>
-          A ECG e a GCS-P não servem apenas para “dar nota” ao paciente — elas
-          mostram <strong>tendência de melhora ou piora</strong>. Anote cada
-          componente (O, V e M) separadamente, avalie a pupila e compare os
-          resultados ao longo do tempo.
-        </p>
+        <!-- Exercícios -->
+        <h3>Atividades Práticas</h3>
+
+        <!-- Casos 1-10 (OVM e Pupilas) -->
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 1</strong> Paciente trazido pelo SAMU após queda de
+            escada, acorda com chamado verbal, fala orientadamente e obedece a
+            todos os comandos motores.
+          </p>
+          <button onclick="mostrarResposta('res1')">Mostrar resposta</button>
+          <p id="res1" style="display: none">
+            ✅ Resposta: O3 V5 M6 → 14 (leve) O3 abre olhos ao som, V5 fala
+            orientadamente, M6 obedece completamente aos comandos motores.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 2</strong> Paciente com intoxicação medicamentosa, abre
+            olhos ao som, fala confusamente e realiza flexão normal em retirada
+            à dor.
+          </p>
+          <button onclick="mostrarResposta('res2')">Mostrar resposta</button>
+          <p id="res2" style="display: none">
+            ✅ Resposta: O3 V4 M4 → 11 (moderado) O3 abre olhos ao som, V4 fala
+            confusamente, M4 realiza flexão normal à dor.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 3</strong> Paciente com AVC, confuso, abre olhos ao
+            som, localiza estímulo doloroso mas não consegue executar comandos
+            complexos.
+          </p>
+          <button onclick="mostrarResposta('res3')">Mostrar resposta</button>
+          <p id="res3" style="display: none">
+            ✅ Resposta: O3 V4 M5 → 12 (moderado) O3 abre olhos ao som, V4 fala
+            confusamente, M5 localiza estímulo doloroso mas não obedece
+            completamente aos comandos.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 4</strong> Paciente pós-cirurgia abdominal, acordado,
+            abre olhos espontaneamente, fala orientadamente e consegue obedecer
+            a comandos motores simples.
+          </p>
+          <button onclick="mostrarResposta('res4')">Mostrar resposta</button>
+          <p id="res4" style="display: none">
+            ✅ Resposta: O4 V5 M6 → 15 (leve) O4 abre olhos espontaneamente, V5
+            fala orientadamente, M6 obedece comandos motores simples.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 5</strong> Paciente vítima de acidente, não abre olhos,
+            não responde verbalmente e apresenta extensão dos braços à dor.
+          </p>
+          <button onclick="mostrarResposta('res5')">Mostrar resposta</button>
+          <p id="res5" style="display: none">
+            ✅ Resposta: O1 V1 M2 → 4 (grave) O1 sem abertura ocular, V1 sem
+            resposta verbal, M2 extensão dos braços em resposta à dor.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 6</strong> Paciente com trauma leve, orientado, abre
+            olhos ao som e consegue obedecer comandos motores simples.
+          </p>
+          <button onclick="mostrarResposta('res6')">Mostrar resposta</button>
+          <p id="res6" style="display: none">
+            ✅ Resposta: O3 V5 M6 → 14 (leve) O3 abre olhos ao som, V5 fala
+            orientadamente, M6 obedece comandos motores simples.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 7</strong> Paciente intubado, abre olhos
+            espontaneamente, não é testável verbalmente e obedece a comandos
+            motores simples.
+          </p>
+          <button onclick="mostrarResposta('res7')">Mostrar resposta</button>
+          <p id="res7" style="display: none">
+            ✅ Resposta: O4 V(NT) M6 → 10 (moderado) O4 abre olhos
+            espontaneamente, V não testável devido à intubação, M6 obedece
+            comandos motores simples.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 8</strong> Paciente em choque séptico, abre olhos à
+            dor, não fala e apresenta flexão normal à dor.
+          </p>
+          <button onclick="mostrarResposta('res8')">Mostrar resposta</button>
+          <p id="res8" style="display: none">
+            ✅ Resposta: O2 V1 M4 → 7 (grave) O2 abre olhos à dor, V1 sem
+            resposta verbal, M4 flexão normal em retirada à dor.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 9</strong> Paciente com TCE moderado, abre olhos ao
+            som, fala adequadamente, localiza estímulo doloroso, pupila direita
+            reage à luz e a esquerda não reage.
+          </p>
+          <button onclick="mostrarResposta('res9')">Mostrar resposta</button>
+          <p id="res9" style="display: none">
+            ✅ Resposta: O3 V5 M5 → 13 (OVM) → Pupilar parcial → 13 − 1 = 12
+            (ECG-P) O3 abre olhos ao som, V5 fala adequadamente, M5 localiza
+            estímulo doloroso, pupilar parcial porque apenas uma pupila reage à
+            luz.
+          </p>
+        </div>
+
+        <div class="caso" style="margin-bottom: 1.5rem">
+          <p>
+            <strong>Caso 10</strong> Paciente com AVC hemorrágico, confuso, abre
+            olhos espontaneamente, apresenta flexão normal à dor, ambas pupilas
+            reagem normalmente à luz.
+          </p>
+          <button onclick="mostrarResposta('res10')">Mostrar resposta</button>
+          <p id="res10" style="display: none">
+            ✅ Resposta: O4 V4 M4 → 12 (OVM) → Pupilas normais → 12 − 0 = 12
+            (ECG-P) O4 abre olhos espontaneamente, V4 fala confusamente, M4
+            flexão normal à dor, ambas pupilas reagindo normalmente sem
+            abatimento.
+          </p>
+        </div>
       </article>
     </main>
 
@@ -360,13 +385,10 @@
       <p>Playground da Enfermagem © 2025 — Romário Coimbra</p>
     </footer>
 
-    <script src="../../js/script.js"></script>
-
     <script>
       function mostrarResposta(id) {
-        const resposta = document.getElementById(id);
-        resposta.style.display =
-          resposta.style.display === "none" ? "block" : "none";
+        const p = document.getElementById(id);
+        p.style.display = p.style.display === "none" ? "block" : "none";
       }
     </script>
   </body>
