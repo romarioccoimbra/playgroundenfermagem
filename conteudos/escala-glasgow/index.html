@@ -25,6 +25,26 @@
       table thead {
         background-color: #f2f2f2;
       }
+      /* Limita a largura da tabela e permite quebra de texto */
+      .resumo-tabela {
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* faz as colunas terem larguras proporcionais */
+      }
+
+      .resumo-tabela th,
+      .resumo-tabela td {
+        border: 1px solid #000;
+        padding: 6px;
+        text-align: center;
+        word-wrap: break-word; /* permite quebrar palavras grandes */
+      }
+
+      /* Cabeçalho com fundo */
+      .resumo-tabela thead {
+        background-color: #f2f2f2;
+      }
     </style>
   </head>
   <body>
@@ -37,7 +57,6 @@
         >
       </nav>
     </header>
-
     <main class="content-page">
       <article>
         <h2>Entendendo a Escala de Glasgow</h2>
@@ -48,7 +67,6 @@
           grave. Ela mede <em>como o cérebro reage a estímulos</em> — quanto
           maior a pontuação, melhor a resposta neurológica.
         </p>
-
         <h3>O que ela avalia?</h3>
         <ul>
           <li>
@@ -64,10 +82,9 @@
             sistema motor e a presença de reflexos.
           </li>
         </ul>
-
         <h4>Resumo rápido da pontuação</h4>
         <div style="overflow-x: auto">
-          <table style="width: 100%">
+          <table class="resumo-tabela" style="width: 100%">
             <thead>
               <tr>
                 <th>Categoria</th>
@@ -96,11 +113,9 @@
                 <td>Nenhuma</td>
                 <td>1</td>
               </tr>
-
               <tr>
                 <td colspan="3">&nbsp;</td>
               </tr>
-
               <!-- Verbal -->
               <tr>
                 <td rowspan="5" style="border-bottom: 3px solid #000">
@@ -125,11 +140,9 @@
                 <td>Nenhuma</td>
                 <td>1</td>
               </tr>
-
               <tr>
                 <td colspan="3">&nbsp;</td>
               </tr>
-
               <!-- Motora -->
               <tr>
                 <td rowspan="6" style="border-bottom: 3px solid #000">
@@ -161,12 +174,10 @@
             </tbody>
           </table>
         </div>
-
         <p>
           <strong>Classificação geral:</strong> 13–15 (leve), 9–12 (moderado),
           3–8 (grave).
         </p>
-
         <h3>Detalhes importantes</h3>
         <ul>
           <li>
@@ -186,12 +197,10 @@
             <strong>midríase bilateral</strong> pode indicar morte encefálica.
           </li>
         </ul>
-
         <p>
           Lembre-se: pacientes <strong>intubados</strong> não têm resposta
           verbal testável (marque <em>NT</em>).
         </p>
-
         <h3>Avaliação das Pupilas (ECG-P)</h3>
         <p>
           A <strong>ECG-P</strong> combina a pontuação OVM com avaliação
@@ -239,12 +248,9 @@
           />
         </div>
         <p>Exemplo: OVM = 13, pupilar parcial ECG-P = 13 − 1 = 12</p>
-
         <hr />
-
         <!-- Exercícios -->
         <h3>Atividades Práticas</h3>
-
         <!-- Casos 1-10 (OVM e Pupilas) -->
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
@@ -258,7 +264,6 @@
             orientadamente, M6 obedece completamente aos comandos motores.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 2</strong> Paciente com intoxicação medicamentosa, abre
@@ -271,7 +276,6 @@
             confusamente, M4 realiza flexão normal à dor.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 3</strong> Paciente com AVC, confuso, abre olhos ao
@@ -285,7 +289,6 @@
             completamente aos comandos.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 4</strong> Paciente pós-cirurgia abdominal, acordado,
@@ -298,7 +301,6 @@
             fala orientadamente, M6 obedece comandos motores simples.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 5</strong> Paciente vítima de acidente, não abre olhos,
@@ -310,7 +312,6 @@
             resposta verbal, M2 extensão dos braços em resposta à dor.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 6</strong> Paciente com trauma leve, orientado, abre
@@ -322,7 +323,6 @@
             orientadamente, M6 obedece comandos motores simples.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 7</strong> Paciente intubado, abre olhos
@@ -336,7 +336,6 @@
             comandos motores simples.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 8</strong> Paciente em choque séptico, abre olhos à
@@ -348,7 +347,6 @@
             resposta verbal, M4 flexão normal em retirada à dor.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 9</strong> Paciente com TCE moderado, abre olhos ao
@@ -363,7 +361,6 @@
             luz.
           </p>
         </div>
-
         <div class="caso" style="margin-bottom: 1.5rem">
           <p>
             <strong>Caso 10</strong> Paciente com AVC hemorrágico, confuso, abre
@@ -380,11 +377,7 @@
         </div>
       </article>
     </main>
-
-    <footer>
-      <p>Playground da Enfermagem © 2025 — Romário Coimbra</p>
-    </footer>
-
+    <footer><p>Playground da Enfermagem © 2025 — Romário Coimbra</p></footer>
     <script>
       function mostrarResposta(id) {
         const p = document.getElementById(id);
