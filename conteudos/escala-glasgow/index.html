@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escala de Coma de Glasgow | Playground da Enfermagem</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🧠 Escala de Coma de Glasgow</h1>
+      <nav>
+        <a href="../../index.html" class="voltar">⬅ Voltar ao início</a>
+        <a href="../cuidados-intensivos/index.html" class="voltar"
+          >🏥 Cuidados Intensivos</a
+        >
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <article>
+        <h2>Entendendo a Escala de Glasgow</h2>
+        <p>
+          A <strong>Escala de Coma de Glasgow (ECG)</strong> foi criada em 1974
+          e é usada para avaliar o <strong>nível de consciência</strong> de um
+          paciente após traumas, AVC, TCE ou qualquer situação neurológica
+          grave. Ela mede <em>como o cérebro reage a estímulos</em> — e quanto
+          maior a pontuação, melhor a resposta neurológica.
+        </p>
+
+        <h3>O que ela avalia?</h3>
+        <ul>
+          <li>
+            <strong>Abertura ocular (O):</strong> mostra o despertar e a
+            resposta do córtex cerebral.
+          </li>
+          <li>
+            <strong>Resposta verbal (V):</strong> avalia a capacidade cognitiva
+            e coerência da fala.
+          </li>
+          <li>
+            <strong>Resposta motora (M):</strong> indica a integridade do
+            sistema motor e a presença de reflexos.
+          </li>
+        </ul>
+
+        <h4>Resumo rápido da pontuação</h4>
+        <div style="overflow-x: auto">
+          <table
+            border="1"
+            cellpadding="8"
+            cellspacing="0"
+            style="border-collapse: collapse; width: 100%; text-align: center"
+          >
+            <thead style="background-color: #f2f2f2">
+              <tr>
+                <th>Categoria</th>
+                <th>Resposta</th>
+                <th>Pontos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Ocular -->
+              <tr>
+                <td rowspan="4" style="border-bottom: 3px solid #000">
+                  Ocular (O)
+                </td>
+                <td>Espontânea</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Ao som</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>À dor</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Nenhuma</td>
+                <td>1</td>
+              </tr>
+
+              <!-- Separador -->
+              <tr>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+
+              <!-- Verbal -->
+              <tr>
+                <td rowspan="5" style="border-bottom: 3px solid #000">
+                  Verbal (V)
+                </td>
+                <td>Orientado</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Confuso</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Palavras inapropriadas</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Sons incompreensíveis</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Nenhuma</td>
+                <td>1</td>
+              </tr>
+
+              <!-- Separador -->
+              <tr>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+
+              <!-- Motora -->
+              <tr>
+                <td rowspan="6" style="border-bottom: 3px solid #000">
+                  Motora (M)
+                </td>
+                <td>Obedece comandos</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>Localiza dor</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Flexão normal (retirada)</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Flexão anormal (decorticação)</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Extensão (descerebração)</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Nenhuma</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          <strong>Classificação geral:</strong> 13–15 (leve), 9–12 (moderado),
+          3–8 (grave).
+        </p>
+
+        <h3>Detalhes importantes</h3>
+        <ul>
+          <li>
+            ⚕️ A abertura ocular avalia o despertar do córtex cerebral e a
+            ativação do tronco encefálico.
+          </li>
+          <li>
+            🗣 A resposta verbal coerente indica bom funcionamento cortical.
+          </li>
+          <li>
+            💪 A resposta motora mostra integridade das vias neuromotoras e do
+            sistema piramidal.
+          </li>
+          <li>
+            👁 Avalie também as pupilas: <strong>isocoria</strong> é normal;
+            <strong>anisocoria</strong> indica lesão cerebral;
+            <strong>midríase bilateral</strong> pode indicar morte encefálica.
+          </li>
+        </ul>
+
+        <p>
+          Lembre-se: pacientes <strong>intubados</strong> não têm resposta
+          verbal testável (marque <em>NT</em>).
+        </p>
+
+        <hr />
+
+        <h3>Atividade: Avaliação da Escala de Glasgow</h3>
+
+        <div class="caso">
+          <p>
+            <strong>Caso 1:</strong> Paciente acorda com chamado, fala de forma
+            confusa e obedece comandos.
+          </p>
+          <button onclick="mostrarResposta('resposta1')">
+            Mostrar resposta
+          </button>
+          <p id="resposta1" style="display: none; margin-top: 0.5rem">
+            ✅ Resposta: O3 V4 M6 → 13 (leve)
+          </p>
+        </div>
+
+        <div class="caso" style="margin-top: 1rem">
+          <p>
+            <strong>Caso 2:</strong> Paciente sem fala, sem abertura ocular e
+            extensão dos braços à dor.
+          </p>
+          <button onclick="mostrarResposta('resposta2')">
+            Mostrar resposta
+          </button>
+          <p id="resposta2" style="display: none; margin-top: 0.5rem">
+            ✅ Resposta: O1 V1 M2 → 4 (grave)
+          </p>
+        </div>
+
+        <div class="caso" style="margin-top: 1rem">
+          <p>
+            <strong>Caso 3:</strong> Paciente intubado, abre olhos à dor e
+            localiza o estímulo com o braço.
+          </p>
+          <button onclick="mostrarResposta('resposta3')">
+            Mostrar resposta
+          </button>
+          <p id="resposta3" style="display: none; margin-top: 0.5rem">
+            ✅ Resposta: O2 V(NT) M5 → Grave (não testável verbal)
+          </p>
+        </div>
+
+        <div class="caso" style="margin-top: 1rem">
+          <p>
+            <strong>Caso 4:</strong> Paciente fala adequadamente, abre os olhos
+            espontaneamente e obedece comandos.
+          </p>
+          <button onclick="mostrarResposta('resposta4')">
+            Mostrar resposta
+          </button>
+          <p id="resposta4" style="display: none; margin-top: 0.5rem">
+            ✅ Resposta: O4 V5 M6 → 15 (normal)
+          </p>
+        </div>
+
+        <hr />
+
+        <h3>💡 Dica final</h3>
+        <p>
+          A ECG não serve apenas para “dar nota” ao paciente — ela mostra
+          <strong>tendência de melhora ou piora</strong>. Anote cada componente
+          (O, V e M) separadamente e compare as avaliações ao longo do tempo.
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      <p>Playground da Enfermagem © 2025 — Romário Coimbra</p>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+
+    <script>
+      function mostrarResposta(id) {
+        const resposta = document.getElementById(id);
+        resposta.style.display =
+          resposta.style.display === "none" ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>
