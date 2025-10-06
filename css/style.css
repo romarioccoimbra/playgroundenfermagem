@@ -1,0 +1,149 @@
+/* ======== RESET ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ======== HEADER ======== */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #00897b;
+  color: white;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+}
+
+/* ======== MAIN ======== */
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  color: #00796b;
+  margin-bottom: 1rem;
+  border-left: 5px solid #26a69a;
+  padding-left: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* ======== CARDS ======== */
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h3 {
+  color: #00796b;
+  margin-bottom: 0.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ======== CONTENT PAGE ======== */
+.content-page {
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.content-page h2,
+.content-page h3 {
+  color: #00796b;
+  margin-top: 1.5rem;
+}
+
+.video-container {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.voltar {
+  display: inline-block;
+  margin-top: 1rem;
+  color: white;
+  background-color: #00796b;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.voltar:hover {
+  background-color: #004d40;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #00897b;
+  color: white;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (min-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-page {
+    padding: 3rem;
+  }
+}
