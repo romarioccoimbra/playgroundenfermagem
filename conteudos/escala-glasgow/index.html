@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Escala de Coma de Glasgow | Playground da Enfermagem</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      .caso button {
+        margin-top: 0.5rem;
+        cursor: pointer;
+      }
+      .caso p {
+        margin: 0.3rem 0;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -81,7 +90,6 @@
                 <td>1</td>
               </tr>
 
-              <!-- Separador -->
               <tr>
                 <td colspan="3">&nbsp;</td>
               </tr>
@@ -111,7 +119,6 @@
                 <td>1</td>
               </tr>
 
-              <!-- Separador -->
               <tr>
                 <td colspan="3">&nbsp;</td>
               </tr>
@@ -172,7 +179,6 @@
             <strong>midríase bilateral</strong> pode indicar morte encefálica.
           </li>
         </ul>
-
         <p>
           Lembre-se: pacientes <strong>intubados</strong> não têm resposta
           verbal testável (marque <em>NT</em>).
@@ -180,6 +186,7 @@
 
         <hr />
 
+        <!-- Atividade OVM -->
         <h3>Atividade: Avaliação da Escala de Glasgow</h3>
 
         <div class="caso">
@@ -190,7 +197,7 @@
           <button onclick="mostrarResposta('resposta1')">
             Mostrar resposta
           </button>
-          <p id="resposta1" style="display: none; margin-top: 0.5rem">
+          <p id="resposta1" style="display: none">
             ✅ Resposta: O3 V4 M6 → 13 (leve)
           </p>
         </div>
@@ -203,7 +210,7 @@
           <button onclick="mostrarResposta('resposta2')">
             Mostrar resposta
           </button>
-          <p id="resposta2" style="display: none; margin-top: 0.5rem">
+          <p id="resposta2" style="display: none">
             ✅ Resposta: O1 V1 M2 → 4 (grave)
           </p>
         </div>
@@ -216,8 +223,8 @@
           <button onclick="mostrarResposta('resposta3')">
             Mostrar resposta
           </button>
-          <p id="resposta3" style="display: none; margin-top: 0.5rem">
-            ✅ Resposta: O2 V(NT) M5 → Grave (não testável verbal)
+          <p id="resposta3" style="display: none">
+            ✅ Resposta: O2 V(NT) M5 → 8 (grave)
           </p>
         </div>
 
@@ -229,8 +236,111 @@
           <button onclick="mostrarResposta('resposta4')">
             Mostrar resposta
           </button>
-          <p id="resposta4" style="display: none; margin-top: 0.5rem">
+          <p id="resposta4" style="display: none">
             ✅ Resposta: O4 V5 M6 → 15 (normal)
+          </p>
+        </div>
+
+        <hr />
+
+        <!-- Avaliação Pupilar -->
+        <h3>Avaliação das Pupilas (GCS-P)</h3>
+        <p>
+          Além da pontuação OVM, a
+          <strong>Escala de Coma de Glasgow Modificada (GCS-P)</strong>
+          considera a resposta pupilar:
+        </p>
+
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-start;
+          "
+        >
+          <table
+            border="1"
+            cellpadding="8"
+            cellspacing="0"
+            style="
+              border-collapse: collapse;
+              text-align: center;
+              min-width: 250px;
+            "
+          >
+            <thead style="background-color: #f2f2f2">
+              <tr>
+                <th>Resposta Pupilar</th>
+                <th>Valor a abater</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Inexistente (nenhuma pupila reage)</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Parcial (uma pupila reage)</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Completa (duas pupilas reagem)</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <img
+            src="./pupilas.jpg"
+            alt="Exemplo de avaliação pupilar"
+            style="
+              max-width: 300px;
+              width: 100%;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+          />
+        </div>
+
+        <p>
+          A pontuação pupilar deve ser subtraída da soma total OVM para obter a
+          pontuação final GCS-P. Exemplo: se OVM = 13 e a resposta pupilar é
+          parcial (1), GCS-P = 13 − 1 = 12.
+        </p>
+
+        <h3>Atividade: Avaliação Pupilar</h3>
+
+        <div class="caso">
+          <p>
+            <strong>Caso Pupilar 1:</strong> Paciente reage com apenas uma
+            pupila à luz.
+          </p>
+          <button onclick="mostrarResposta('pupila1')">Mostrar resposta</button>
+          <p id="pupila1" style="display: none">
+            ✅ Resposta: Parcial → abater 1 ponto da pontuação OVM
+          </p>
+        </div>
+
+        <div class="caso" style="margin-top: 1rem">
+          <p>
+            <strong>Caso Pupilar 2:</strong> Nenhuma pupila reage ao estímulo de
+            luz.
+          </p>
+          <button onclick="mostrarResposta('pupila2')">Mostrar resposta</button>
+          <p id="pupila2" style="display: none">
+            ✅ Resposta: Inexistente → abater 2 pontos da pontuação OVM
+          </p>
+        </div>
+
+        <div class="caso" style="margin-top: 1rem">
+          <p>
+            <strong>Caso Pupilar 3:</strong> Ambas as pupilas reagem normalmente
+            à luz.
+          </p>
+          <button onclick="mostrarResposta('pupila3')">Mostrar resposta</button>
+          <p id="pupila3" style="display: none">
+            ✅ Resposta: Completa → abater 0 pontos da pontuação OVM
           </p>
         </div>
 
@@ -238,9 +348,10 @@
 
         <h3>💡 Dica final</h3>
         <p>
-          A ECG não serve apenas para “dar nota” ao paciente — ela mostra
-          <strong>tendência de melhora ou piora</strong>. Anote cada componente
-          (O, V e M) separadamente e compare as avaliações ao longo do tempo.
+          A ECG e a GCS-P não servem apenas para “dar nota” ao paciente — elas
+          mostram <strong>tendência de melhora ou piora</strong>. Anote cada
+          componente (O, V e M) separadamente, avalie a pupila e compare os
+          resultados ao longo do tempo.
         </p>
       </article>
     </main>
