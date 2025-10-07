@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaTeX e Overleaf | Playground da Enfermagem</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📚 Automatizando Trabalhos Acadêmicos com LaTeX e Overleaf</h1>
+      <nav>
+        <a href="../../index.html" class="voltar">⬅ Voltar ao início</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <article>
+        <!-- Introdução -->
+        <h2>Por que usar o LaTeX e o Overleaf?</h2>
+        <p>
+          Fazer um trabalho acadêmico de forma correta e organizada costuma ser
+          uma das partes mais difíceis da vida de estudante. Muitas vezes,
+          passamos mais tempo ajustando margens, espaçamento e citações do que
+          realmente escrevendo o conteúdo. O <strong>LaTeX</strong> e o
+          <strong>Overleaf</strong> são ferramentas que ajudam justamente nisso:
+          eles automatizam toda a parte de formatação, deixando você livre para
+          se concentrar no que realmente importa — o conteúdo do seu trabalho.
+        </p>
+
+        <!-- Seção 1: LaTeX -->
+        <section>
+          <h2>🧮 O que é o LaTeX?</h2>
+          <p>
+            O <strong>LaTeX</strong> é um programa que formata textos de forma
+            automática. Ele é muito usado em universidades do mundo todo porque
+            segue regras de formatação padronizadas (como as normas da ABNT),
+            gera sumários, listas e referências sem esforço, e mantém a
+            aparência do documento sempre uniforme e profissional.
+          </p>
+          <p>
+            Diferente dos editores tradicionais (como Word ou Google Docs), o
+            LaTeX funciona com comandos: você escreve o texto e indica o que é
+            título, capítulo, citação, etc. Depois, o sistema monta tudo
+            sozinho, já com o estilo correto.
+          </p>
+          <p>
+            Não é preciso decorar códigos — com a ajuda do Overleaf (que veremos
+            a seguir), usar o LaTeX se torna simples e intuitivo, mesmo para
+            quem nunca programou.
+          </p>
+        </section>
+
+        <!-- Seção 2: Overleaf -->
+        <section>
+          <h2>☁️ O que é o Overleaf?</h2>
+          <p>
+            O <strong>Overleaf</strong> é um site onde você pode usar o LaTeX
+            diretamente do navegador, sem instalar nada no computador. Ele
+            funciona como uma “sala de aula online” para escrever trabalhos:
+            você vê o texto de um lado e o resultado final do outro, tudo
+            acontecendo em tempo real.
+          </p>
+          <p>
+            Com ele, você pode estudar, editar e até trabalhar em grupo. Tudo
+            fica salvo automaticamente na nuvem, e você pode acessar seus
+            arquivos de qualquer lugar.
+          </p>
+          <p>
+            🔗 Acesse o site oficial:
+            <a
+              href="https://www.overleaf.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >www.overleaf.com</a
+            >
+          </p>
+        </section>
+
+        <!-- Seção 3: Template -->
+        <section>
+          <h2>📄 Template do IFMG</h2>
+          <p>
+            Para facilitar o uso, existe um modelo pronto de TCC desenvolvido
+            especialmente para os alunos do <strong>IFMG</strong>. Esse template
+            foi criado com base em um projeto da <strong>UFOP</strong> e
+            atualizado em <strong>2024</strong> pelo
+            <strong>Prof. Elias J. R. Freitas</strong>
+            (<em>ej-ensino.com.br</em>), garantindo compatibilidade com as
+            normas mais recentes da <strong>ABNT (NBR 10520:2023)</strong>.
+          </p>
+          <p>
+            Esse modelo é confiável e reconhecido por instituições de ensino
+            técnico e superior, oferecendo a estrutura ideal para quem quer
+            produzir um trabalho de forma padronizada e sem erros de formatação.
+          </p>
+          <p>
+            📎 Link direto para o modelo no Overleaf:<br />
+            <a
+              href="https://www.overleaf.com/latex/templates/tcc-template-ifmg-itr-modelo-para-trabalho-de-conclusao-de-curso/yhykrgwqtymd"
+              target="_blank"
+              rel="noopener noreferrer"
+              >TCC Template IFMG-ITR — UFOP (Overleaf)</a
+            >
+          </p>
+        </section>
+
+        <!-- Seção 4: Organização -->
+        <section>
+          <h2>📂 Estrutura do projeto no Overleaf</h2>
+          <p>
+            Ao abrir o template no Overleaf, você verá que o projeto já vem
+            organizado em pastas e arquivos. Isso ajuda a manter o trabalho
+            limpo e bem dividido. Veja como entender essa estrutura:
+          </p>
+          <ul>
+            <li>
+              <strong>main.tex</strong> — é o arquivo principal, onde o trabalho
+              é compilado.
+            </li>
+            <li>
+              <strong>capitulos/</strong> — contém os capítulos separados
+              (introdução, metodologia, resultados...).
+            </li>
+            <li>
+              <strong>referencias.bib</strong> — onde ficam as referências do
+              trabalho (em formato BibTeX).
+            </li>
+            <li><strong>imagens/</strong> — pasta para figuras e gráficos.</li>
+          </ul>
+          <p>
+            Essa divisão evita confusões e facilita a colaboração com colegas ou
+            orientadores.
+          </p>
+        </section>
+
+        <!-- Seção 5: Bibliografia -->
+        <section>
+          <h2>🔖 Como inserir e citar referências</h2>
+          <p>
+            Uma das maiores vantagens do LaTeX é o uso do
+            <strong>BibTeX</strong>, que automatiza as referências
+            bibliográficas. Você só precisa registrar cada fonte uma vez, e o
+            sistema cuida de formatar tudo corretamente.
+          </p>
+          <p>
+            Exemplo de referência dentro do arquivo
+            <code>referencias.bib</code>:
+          </p>
+          <pre
+            style="
+              background-color: #f4f4f4;
+              padding: 0.8rem;
+              border-radius: 6px;
+              overflow-x: auto;
+            "
+          >
+@book{freitas2024,
+  author = {Freitas, E. J. R.},
+  title = {Modelo de TCC IFMG atualizado},
+  year = {2024},
+  institution = {Instituto Federal de Minas Gerais},
+  note = {Baseado no modelo UFOP/ABNT 2023}
+}
+          </pre>
+          <p>
+            Para citar no texto, basta digitar
+            <code>\cite{freitas2024}</code>. O Overleaf vai gerar a citação e a
+            referência automaticamente, já nas normas da ABNT.
+          </p>
+        </section>
+
+        <!-- Dica final -->
+        <section>
+          <h2>💡 Dica final</h2>
+          <p>
+            Se for seu primeiro contato com o LaTeX, não se preocupe. Com o
+            Overleaf, tudo é feito passo a passo, e você pode começar copiando o
+            modelo pronto. Com o tempo, vai perceber que ele facilita muito o
+            trabalho — principalmente para quem quer apresentar um resultado
+            bonito, correto e profissional.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        Playground da Enfermagem - 2025 <br />
+        Romário Coimbra
+      </p>
+    </footer>
+  </body>
+</html>
