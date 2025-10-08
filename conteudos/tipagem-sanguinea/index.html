@@ -8,19 +8,25 @@
     <style>
       /* Estilos específicos para a página de Tipagem Sanguínea */
 
+      /* NOVO: Wrapper para forçar rolagem em telas pequenas (Tabela Teórica) */
+      .table-wrapper {
+        overflow-x: auto;
+        margin: 20px 0; /* Espaçamento da tabela */
+      }
+
       /* Estilo da tabela teórica */
       .content-page table {
         width: 100%;
         border-collapse: collapse;
-        margin: 20px 0;
-        font-size: 0.95rem;
+        min-width: 550px;
+        font-size: 0.85rem;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
 
       .content-page th,
       .content-page td {
         border: 1px solid #ccc;
-        padding: 12px 8px;
+        padding: 8px 4px;
         text-align: center;
       }
 
@@ -30,7 +36,7 @@
         font-weight: bold;
       }
 
-      /* Estilos do Jogo de Prática (mantidos do seu código anterior, mas adaptados ao design) */
+      /* Estilos do Jogo de Prática (mobile-first) */
 
       .pratica-container {
         display: flex;
@@ -40,56 +46,57 @@
       }
 
       .section-pratica {
-        background: #f7f7f7; /* Cor de fundo suave para a prática */
+        background: #f7f7f7;
         padding: 15px;
         border-radius: 10px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      /* CORREÇÃO PARA DISPOSITIVOS MÓVEIS (evita vazamento horizontal da tabela de prática) */
-      @media (max-width: 767px) {
-        .section-pratica {
-          /* Permite a rolagem horizontal dentro da seção se a tabela for muito larga */
-          overflow-x: auto;
-        }
-        .section-pratica table {
-          /* Garante que a tabela tenha largura suficiente para o conteúdo sem espremer */
-          min-width: 450px;
-        }
+        /* MOBILE FIRST: Permite rolagem horizontal por padrão */
+        overflow-x: auto;
       }
 
       .section-pratica table {
         border-collapse: collapse;
         margin-top: 10px;
+        min-width: 350px;
+        font-size: 0.85rem;
       }
 
       .section-pratica th,
       .section-pratica td {
-        padding: 8px;
+        padding: 4px;
         border: 1px solid #ddd;
         text-align: center;
       }
 
+      /* NOVO: Regra para estreitar a primeira coluna da tabela de prática */
+      .section-pratica tr td:first-child {
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+      }
+
+      /* AJUSTES AQUI para ULTRA-COMPACTAR o espaço vertical da área arrastável */
       .draggables {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        margin: 10px 0;
-        padding: 10px;
-        background-color: #e0f2f1; /* Fundo para os tipos arrastáveis */
+        gap: 3px;
+        margin: 3px 0;
+        padding: 3px;
+        background-color: #e0f2f1;
         border-radius: 8px;
       }
 
       .draggable {
-        padding: 10px 14px;
-        background-color: #00796b; /* Cor primária */
+        padding: 3px 8px;
+        background-color: #00796b;
         color: white;
         border-radius: 6px;
         cursor: grab;
         user-select: none;
-        font-size: 16px;
+        font-size: 13px;
       }
+      /* FIM DOS AJUSTES DE COMPACTAÇÃO */
 
       .dropzone {
         min-height: 36px;
@@ -147,13 +154,23 @@
         background-color: #e00;
       }
 
-      /* Layout em Desktop */
+      /* Layout em Desktop (Sobrescreve o mobile) */
       @media (min-width: 768px) {
         .pratica-container {
-          flex-direction: row;
+          flex-direction: row; /* DESKTOP: Coloca lado a lado */
           justify-content: space-around;
           align-items: flex-start;
           gap: 20px;
+        }
+
+        .section-pratica {
+          overflow-x: hidden; /* DESKTOP: Não precisa de rolagem aqui */
+          width: 100%;
+          max-width: 350px;
+        }
+
+        .section-pratica table {
+          min-width: auto; /* DESKTOP: Permite a tabela se ajustar */
         }
 
         .draggables {
@@ -162,11 +179,6 @@
           justify-content: center;
           max-width: 140px;
           margin: auto;
-        }
-
-        .section-pratica {
-          width: 100%;
-          max-width: 350px;
         }
 
         .section-pratica h3 {
@@ -197,42 +209,44 @@
         <h3>Grupos Sanguíneos ABO</h3>
         <p>Existem 4 principais grupos sanguíneos do sistema ABO:</p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Grupo</th>
-              <th>Antígeno na hemácia</th>
-              <th>Anticorpo no plasma</th>
-              <th>Pode receber sangue de</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>A</strong></td>
-              <td>A</td>
-              <td>Anti-B</td>
-              <td>A e O</td>
-            </tr>
-            <tr>
-              <td><strong>B</strong></td>
-              <td>B</td>
-              <td>Anti-A</td>
-              <td>B e O</td>
-            </tr>
-            <tr>
-              <td><strong>AB</strong></td>
-              <td>A e B</td>
-              <td>Não tem</td>
-              <td>A, B, AB e O (receptor universal)</td>
-            </tr>
-            <tr>
-              <td><strong>O</strong></td>
-              <td>Não tem</td>
-              <td>Anti-A e Anti-B</td>
-              <td>O</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Grupo</th>
+                <th>Antígeno na hemácia</th>
+                <th>Anticorpo no plasma</th>
+                <th>Pode receber sangue de</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>A</strong></td>
+                <td>A</td>
+                <td>Anti-B</td>
+                <td>A e O</td>
+              </tr>
+              <tr>
+                <td><strong>B</strong></td>
+                <td>B</td>
+                <td>Anti-A</td>
+                <td>B e O</td>
+              </tr>
+              <tr>
+                <td><strong>AB</strong></td>
+                <td>A e B</td>
+                <td>Não tem</td>
+                <td>A, B, AB e O (receptor universal)</td>
+              </tr>
+              <tr>
+                <td><strong>O</strong></td>
+                <td>Não tem</td>
+                <td>Anti-A e Anti-B</td>
+                <td>O</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h3>Fator Rh</h3>
         <p>
