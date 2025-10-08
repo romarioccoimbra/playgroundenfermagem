@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de Medicamentos - Teoria, Prática e Fórmulas</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      /* Estilos para o conteúdo teórico extraído (tabelas, pre) */
+      .content-page ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+
+      pre {
+        background-color: #f4f4f4;
+        padding: 15px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-x: auto;
+        margin: 15px 0;
+        line-height: 1.5;
+        font-size: 0.95em;
+      }
+
+      /* Estilos específicos para a Prática de Cálculo de Medicações - NOVO DESIGN */
+      .calculo-container {
+        max-width: 800px;
+        margin: auto;
+        /* Fundo do container principal da prática */
+        background: #f5f5f5; /* Fundo mais neutro */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
+      }
+
+      .calculo-container h3 {
+        /* Cor e estilo dos títulos dos cards */
+        color: #34495e;
+        border-left: 4px solid #95a5a6;
+        padding-left: 10px;
+      }
+
+      .section {
+        margin-bottom: 25px;
+        padding: 15px;
+        /* Estilo dos cards individuais */
+        border: 1px solid #ecf0f1;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Estilos dos inputs e labels mantidos */
+      label,
+      input {
+        display: block;
+        margin: 10px 0;
+        box-sizing: border-box; /* Garante que o padding não aumente a largura */
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        /* Cor dos botões - Azul */
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background-color: #2980b9; /* Azul mais escuro no hover */
+      }
+
+      .resultado {
+        margin-top: 15px;
+        font-weight: bold;
+        /* Fundo e borda do resultado */
+        background-color: #ecf0f1;
+        border: 1px solid #bdc3c7;
+        border-radius: 5px;
+        padding: 10px;
+        font-family: monospace;
+        color: #2c3e50; /* Texto escuro */
+        white-space: pre-wrap;
+      }
+
+      .resposta {
+        display: none;
+        margin-top: 5px;
+        font-size: 0.95em;
+        color: #444;
+        background: #ecf0f1; /* Cor de fundo da resposta */
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>💊 Cálculo de Medicamentos</h1>
+      <nav>
+        <a href="../../index.html" class="voltar">⬅ Voltar ao início</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <article>
+        <h2>💊 Cálculo de Medicações</h2>
+
+        <p>
+          <strong>Responsabilidade:</strong> A administração de medicamentos é
+          responsabilidade da equipe de enfermagem. Erros não detectados recaem
+          sobre os profissionais diretamente envolvidos na administração.
+        </p>
+
+        <h3>Conceitos</h3>
+        <ul>
+          <li>
+            <strong>Solução:</strong> mistura homogênea (soluto + solvente).
+          </li>
+          <li>
+            <strong>Exemplo:</strong> SF 0,9% = 0,9g em 100ml; SG 5% = 5g em
+            100ml.
+          </li>
+          <li>
+            <strong>Tipos:</strong> Isotônica (SF 0,9%, SG 5%), Hipotônica (SF
+            0,45%), Hipertônica (Glicose 10%).
+          </li>
+          <li><strong>Concentração:</strong> gramas/mL.</li>
+          <li><strong>Proporção:</strong> Ex: 1:500 → 1g para 500ml.</li>
+          <li><strong>Porcentagem:</strong> Ex: 7% → 7g para 100ml.</li>
+        </ul>
+
+        <h3>Reconstituição e Diluição</h3>
+        <ul>
+          <li>
+            <strong>Reconstituição:</strong> adicionar diluente ao pó (ex: água
+            destilada).
+          </li>
+          <li>
+            <strong>Diluição:</strong> aumentar o volume com diluente
+            compatível.
+          </li>
+        </ul>
+
+        <h3>Regra de Três</h3>
+        <p>
+          A <strong>Regra de Três</strong> é a ferramenta matemática mais
+          essencial para o cálculo seguro de medicamentos. Ela é usada para
+          <strong>encontrar um valor desconhecido (X)</strong>, sabendo que
+          existe uma proporção direta entre a <strong>concentração</strong> do
+          medicamento e o <strong>volume</strong> que ele ocupa.
+        </p>
+
+        <h4>Passos para o cálculo seguro:</h4>
+        <ol>
+          <li>
+            <strong>Identifique a Proporção Conhecida (Disponível):</strong> É o
+            que o medicamento tem (Dose) e o volume em que ele está (Volume).
+          </li>
+          <li>
+            <strong>Identifique o Valor Desejado (Prescrito):</strong> É a Dose
+            que você precisa administrar. O valor <strong>X</strong> será o
+            volume a ser puxado na seringa.
+          </li>
+          <li>
+            <strong>Monte a Proporção:</strong> Coloque Dose sob Dose e Volume
+            sob Volume, sempre alinhando as mesmas unidades de medida.
+          </li>
+          <li>
+            <strong>Multiplicação Cruzada:</strong> Multiplique os números em
+            diagonal (X pelo valor que o acompanha, e os dois valores
+            conhecidos).
+          </li>
+          <li>
+            <strong>Isole o X:</strong> O valor que estava com o X passa para o
+            outro lado da equação, dividindo o resultado da multiplicação
+            cruzada.
+          </li>
+        </ol>
+
+        <pre>
+            <strong>Exemplo Prático:</strong>
+            Temos: 0,5g de medicamento em 2ml.
+            Queremos: Administrar 0,25g.
+            Qual volume (X) devo aspirar?
+
+            1. Montagem da Proporção:
+            0,5g → 2ml
+            0,25g → X
+
+            2. Multiplicação Cruzada (Início):
+            0,5 * X = 0,25 * 2
+
+            3. Cálculo e Isolamento de X:
+            X = (0,25 × 2) ÷ 0,5
+            X = 0,5 ÷ 0,5
+            X = 1ml
+        </pre>
+
+        <h3>Conversões Importantes</h3>
+        <ul>
+          <li>1ml = 20 gotas (<strong>macrogotas</strong>)</li>
+          <li>1ml = 60 <strong>microgotas</strong></li>
+          <li>1 gota = 3 <strong>microgotas</strong></li>
+          <li>1g = 1000mg</li>
+          <li>1L = 1000ml</li>
+        </ul>
+
+        <h3>Colheres</h3>
+        <ul>
+          <li>Sopa: 15ml</li>
+          <li>Sobremesa: 10ml</li>
+          <li>Chá: 5ml</li>
+          <li>Café: 2,5–3ml</li>
+        </ul>
+
+        <h3>Sistema Métrico</h3>
+        <p>Baseado em múltiplos de 10.</p>
+        <ul>
+          <li>mg → g: dividir por 1000</li>
+          <li>g → mg: multiplicar por 1000</li>
+          <li>L → ml: multiplicar por 1000</li>
+        </ul>
+
+        <h3>Fórmulas de Gotejamento</h3>
+        <ul>
+          <li><strong>Macrogotas:</strong> Volume ÷ (Tempo(h) × 3)</li>
+          <li><strong>Microgotas:</strong> Volume ÷ Tempo(h)</li>
+        </ul>
+
+        <pre>
+Exemplo:
+Macrogotas: 100 mL em 1h → 100 ÷ (1 x 3) = 33,33 gotas/min
+OU
+→ 100 x 20 (1ml equivale a 20 gotas) x 60 (1hr = 60min) = 2000 ÷ 60 = 33,33 gotas/min
+Microgotas: 100 mL em 1h → 100 ÷ 1 = 100 microgotas/min
+          </pre
+        >
+
+        <hr />
+
+        <h2>Prática Interativa: Calculadoras e Exercícios</h2>
+        <p>
+          Utilize as calculadoras abaixo para praticar conversões de medidas e
+          cálculos essenciais na enfermagem. O sistema de gotejamento utiliza o
+          fator de **20 gotas/mL** (equipo macrogotas).
+        </p>
+
+        <div class="calculo-container">
+          <div class="section">
+            <h3>1. mL para Gotas</h3>
+            <label>Quantidade em mL:</label>
+            <input type="number" id="ml" />
+            <button onclick="converterMlEmGotas()">Converter</button>
+            <div class="resultado" id="resultadoGotas"></div>
+          </div>
+
+          <div class="section">
+            <h3>2. Horas para Minutos</h3>
+            <label>Quantidade em horas:</label>
+            <input type="number" id="horas" />
+            <button onclick="converterHorasEmMinutos()">Converter</button>
+            <div class="resultado" id="resultadoMinutos"></div>
+          </div>
+
+          <div class="section">
+            <h3>3. Cálculo de Gotejamento</h3>
+            <label>Volume (mL):</label>
+            <input type="number" id="vol" />
+            <label>Tempo (horas):</label>
+            <input type="number" id="tempo" />
+            <button onclick="gotejamento()">Calcular</button>
+            <div class="resultado" id="resGotejamento"></div>
+          </div>
+
+          <div class="section">
+            <h3>4. Proporção em Solução (%)</h3>
+            <label>Concentração da solução (%)</label>
+            <input type="number" id="conc" />
+            <label>Volume em mL:</label>
+            <input type="number" id="volSol" />
+            <button onclick="calcularSoluto()">Calcular</button>
+            <div class="resultado" id="resSolucao"></div>
+          </div>
+
+          <div class="section">
+            <h2>5. Exercícios de Prática</h2>
+            <ol>
+              <li>
+                Converta 2,5 horas em minutos. <br /><button
+                  onclick="mostrar(1)"
+                >
+                  Mostrar Resposta
+                </button>
+                <div class="resposta" id="resp1">
+                  Passo a passo:
+                  <ol>
+                    <li>Sabemos que 1 hora tem 60 minutos.</li>
+                    <li>
+                      Multiplicamos o número de horas pelo total de minutos: 2,5
+                      × 60.
+                    </li>
+                    <li>Resultado: 2,5 × 60 = 150 minutos.</li>
+                  </ol>
+                  Logo, 2,5 horas correspondem a 150 minutos.
+                </div>
+              </li>
+
+              <br />
+              <li>
+                Quantos minutos há em 4 horas e 15 minutos? <br /><button
+                  onclick="mostrar(2)"
+                >
+                  Mostrar Resposta
+                </button>
+                <div class="resposta" id="resp2">
+                  Passo a passo:
+                  <ol>
+                    <li>
+                      Converta as horas para minutos: 4 × 60 = 240 minutos.
+                    </li>
+                    <li>Some os minutos adicionais: 240 + 15 = 255 minutos.</li>
+                  </ol>
+                  Portanto, 4 horas e 15 minutos equivalem a 255 minutos.
+                </div>
+              </li>
+
+              <br />
+              <li>
+                Quantas gotas existem em 250 mL, considerando 20 gotas/mL?
+                <br /><button onclick="mostrar(6)">Mostrar Resposta</button>
+                <div class="resposta" id="resp6">
+                  Passo a passo:
+                  <ol>
+                    <li>
+                      Sabemos que 1 mL equivale a 20 gotas (equipo macrogotas).
+                    </li>
+                    <li>
+                      Multiplicamos o volume em mL pela quantidade de gotas por
+                      mL: 250 × 20.
+                    </li>
+                    <li>Resultado: 250 × 20 = 5000 gotas.</li>
+                  </ol>
+                  Logo, 250 mL correspondem a 5000 gotas.
+                </div>
+              </li>
+
+              <br />
+              <li>
+                Quantas gotas tem 80 mL se o equipo é macrogotas (20 gotas/mL)?
+                <br /><button onclick="mostrar(7)">Mostrar Resposta</button>
+                <div class="resposta" id="resp7">
+                  Passo a passo:
+                  <ol>
+                    <li>1 mL tem 20 gotas.</li>
+                    <li>Multiplicamos: 80 mL × 20 gotas/mL = 1600 gotas.</li>
+                  </ol>
+                  Assim, 80 mL contêm 1600 gotas.
+                </div>
+              </li>
+
+              <br />
+              <li>
+                Quantos gramas de NaCl existem em 500 mL de soro fisiológico a
+                0,9%? <br /><button onclick="mostrar(20)">
+                  Mostrar Resposta
+                </button>
+                <div class="resposta" id="resp20">
+                  Passo a passo:
+                  <ol>
+                    <li>
+                      A concentração de 0,9% significa 0,9g de NaCl em 100 mL de
+                      solução.
+                    </li>
+                    <li>0,9g → 100 mL.</li>
+                    <li>X g → 500 mL.</li>
+                    <li>Regra de três: X = (0,9 × 500) ÷ 100 = 4,5 g.</li>
+                  </ol>
+                  Portanto, há 4,5 g de NaCl em 500 mL de soro fisiológico a
+                  0,9%.
+                </div>
+              </li>
+
+              <br />
+              <li>
+                Quantos mL de solução de glicose a 5% contêm 10g de glicose?
+                <br /><button onclick="mostrar(21)">Mostrar Resposta</button>
+                <div class="resposta" id="resp21">
+                  Passo a passo:
+                  <ol>
+                    <li>
+                      A concentração de 5% significa 5g de glicose em 100 mL.
+                    </li>
+                    <li>5g → 100 mL.</li>
+                    <li>10g → X mL.</li>
+                    <li>Regra de três: X = (10 × 100) ÷ 5 = 200 mL.</li>
+                  </ol>
+                  Assim, 10 g de glicose estão presentes em 200 mL da solução a
+                  5%.
+                </div>
+              </li>
+
+              <br />
+              <li>
+                Quantas gotas por minuto para 500 mL em 5 horas? <br /><button
+                  onclick="mostrar(28)"
+                >
+                  Mostrar Resposta
+                </button>
+                <div class="resposta" id="resp28">
+                  Passo a passo:
+                  <ol>
+                    <li>
+                      Converta o tempo para minutos: 5 horas × 60 = 300 minutos.
+                    </li>
+                    <li>
+                      Multiplique o volume pelo fator de gotas/mL: 500 mL × 20 =
+                      10000 gotas.
+                    </li>
+                    <li>
+                      Divida o total de gotas pelo tempo em minutos: 10000 ÷ 300
+                      ≈ 33,3 gotas/minuto.
+                    </li>
+                    <li>Arredondamos para 33 gotas/minuto.</li>
+                  </ol>
+                  Logo, o gotejamento deve ser de aproximadamente 33 gotas por
+                  minuto.
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        Playground da Enfermagem - 2025 <br />
+        Romário Coimbra
+      </p>
+    </footer>
+
+    <script>
+      // Funções de conversão e cálculo (Funcionamento Inalterado)
+      function converterMlEmGotas() {
+        const ml = parseFloat(document.getElementById("ml").value);
+        if (isNaN(ml)) return alert("Preencha o campo de mL corretamente.");
+        const gotas = ml * 20;
+        document.getElementById(
+          "resultadoGotas"
+        ).innerText = `${ml} mL x 20 gotas/mL = ${gotas} gotas.`;
+      }
+
+      function converterHorasEmMinutos() {
+        const horas = parseFloat(document.getElementById("horas").value);
+        if (isNaN(horas))
+          return alert("Preencha o campo de horas corretamente.");
+        const minutos = horas * 60;
+        document.getElementById(
+          "resultadoMinutos"
+        ).innerText = `${horas} hora(s) x 60 minutos = ${minutos} minutos.`;
+      }
+
+      function gotejamento() {
+        const vol = parseFloat(document.getElementById("vol").value);
+        const tempo = parseFloat(document.getElementById("tempo").value);
+        if (isNaN(vol) || isNaN(tempo) || tempo <= 0)
+          return alert(
+            "Preencha os campos corretamente. O tempo deve ser maior que zero."
+          );
+        const minutos = tempo * 60;
+        const gotas = Math.round((vol * 20) / minutos);
+        document.getElementById(
+          "resGotejamento"
+        ).innerText = `Passo a passo:\n1. Volume total: ${vol} mL\n2. Multiplicamos por 20 (fator de gotas) = ${vol} x 20 = ${
+          vol * 20
+        }\n3. Tempo em minutos: ${tempo}h x 60 = ${minutos}\n4. ${
+          vol * 20
+        } ÷ ${minutos} = ${gotas} gotas por minuto.`;
+      }
+
+      function calcularSoluto() {
+        const conc = parseFloat(document.getElementById("conc").value);
+        const vol = parseFloat(document.getElementById("volSol").value);
+        if (isNaN(conc) || isNaN(vol))
+          return alert("Preencha os campos corretamente.");
+        // Fórmula: (Concentração % * Volume) / 100
+        const resultado = (conc * vol) / 100;
+        document.getElementById(
+          "resSolucao"
+        ).innerText = `Passo a passo:\n1. Concentração: ${conc}% → ${conc}g em 100mL\n2. X g em ${vol} mL\n3. X = (${conc} x ${vol}) / 100 = ${resultado.toFixed(
+          2
+        )} g.`;
+      }
+
+      // Função para mostrar/esconder respostas dos exercícios
+      function mostrar(id) {
+        const resposta = document.getElementById("resp" + id);
+        const button = document.querySelector(
+          `button[onclick="mostrar(${id})"]`
+        );
+        if (resposta.style.display === "block") {
+          resposta.style.display = "none";
+          button.textContent = "Mostrar Resposta";
+        } else {
+          resposta.style.display = "block";
+          button.textContent = "Ocultar Resposta";
+        }
+      }
+    </script>
+  </body>
+</html>

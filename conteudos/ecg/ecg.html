@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulador de ECG</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background-color: #ddd;
+      display: block;
+    }
+
+    footer.eletrodos-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #111;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 6px 4px;
+      z-index: 10;
+    }
+
+    .eletrodo {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      line-height: 28px;
+      margin: 4px;
+      cursor: grab;
+      box-shadow: 0 0 4px #900;
+      user-select: none;
+      touch-action: none;
+      z-index: 20;
+    }
+
+    @media (min-width: 600px) {
+      .eletrodo {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 32px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .eletrodo {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        line-height: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<model-viewer id="viewer"
+  src="male_body_base_mesh_highpoly.glb"
+  alt="Corpo Humano"
+  camera-controls
+  interaction-prompt="none"
+  exposure="1"
+  shadow-intensity="1"
+  camera-orbit="0deg 90deg 2.5m">
+</model-viewer>
+
+<footer class="eletrodos-container">
+  <div class="eletrodo" id="RA">RA</div>
+  <div class="eletrodo" id="LA">LA</div>
+  <div class="eletrodo" id="RL">RL</div>
+  <div class="eletrodo" id="LL">LL</div>
+  <div class="eletrodo" id="V1">V1</div>
+  <div class="eletrodo" id="V2">V2</div>
+  <div class="eletrodo" id="V3">V3</div>
+  <div class="eletrodo" id="V4">V4</div>
+  <div class="eletrodo" id="V5">V5</div>
+  <div class="eletrodo" id="V6">V6</div>
+</footer>
+
+<script>
+  const eletrodos = document.querySelectorAll('.eletrodo');
+  let dragged = null;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  eletrodos.forEach(e => {
+    e.addEventListener('mousedown', evt => {
+      dragged = e;
+      offsetX = evt.clientX - e.getBoundingClientRect().left;
+      offsetY = evt.clientY - e.getBoundingClientRect().top;
+      e.style.cursor = 'grabbing';
+      e.style.position = 'fixed';
+      e.style.zIndex = '1000';
+      evt.preventDefault();
+    });
+
+    e.addEventListener('touchstart', evt => {
+      dragged = e;
+      const touch = evt.touches[0];
+      offsetX = touch.clientX - e.getBoundingClientRect().left;
+      offsetY = touch.clientY - e.getBoundingClientRect().top;
+      e.style.cursor = 'grabbing';
+      e.style.position = 'fixed';
+      e.style.zIndex = '1000';
+      evt.preventDefault();
+    }, { passive: false });
+  });
+
+  window.addEventListener('mousemove', evt => {
+    if (dragged) {
+      dragged.style.left = (evt.clientX - offsetX) + 'px';
+      dragged.style.top = (evt.clientY - offsetY) + 'px';
+    }
+  });
+
+  window.addEventListener('touchmove', evt => {
+    if (dragged) {
+      const touch = evt.touches[0];
+      dragged.style.left = (touch.clientX - offsetX) + 'px';
+      dragged.style.top = (touch.clientY - offsetY) + 'px';
+      evt.preventDefault();
+    }
+  }, { passive: false });
+
+  window.addEventListener('mouseup', () => {
+    if (dragged) {
+      dragged.style.cursor = 'grab';
+      dragged = null;
+    }
+  });
+
+  window.addEventListener('touchend', () => {
+    if (dragged) {
+      dragged.style.cursor = 'grab';
+      dragged = null;
+    }
+  });
+</script>
+
+</body>
+</html>
