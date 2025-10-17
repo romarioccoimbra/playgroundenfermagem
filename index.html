@@ -6,186 +6,189 @@
     <title>Playground da Enfermagem</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <header>
       <h1>🩺 Playground da Enfermagem</h1>
-      <p>
-        Seu espaço para aprender, revisar e praticar fundamentos da enfermagem.
-      </p>
+      <p>Aprenda, revise e pratique os fundamentos da enfermagem.</p>
     </header>
 
+    <!-- ÍNDICE -->
+    <nav id="sumario" aria-label="Sumário do site">
+      <h2 class="sumario-titulo">📖 Sumário</h2>
+      <ul class="sumario-lista">
+        <li><a href="#anatomia" class="sumario-item">💀 Anatomia</a></li>
+        <li>
+          <a href="#saude-coletiva" class="sumario-item">🌎 Saúde Coletiva</a>
+        </li>
+        <li><a href="#fundamentos" class="sumario-item">📋 Fundamentos</a></li>
+        <li>
+          <a href="#farmacologia" class="sumario-item">🧪 Farmacologia</a>
+        </li>
+        <li>
+          <a href="#crianca" class="sumario-item">👶 Criança e Adolescente</a>
+        </li>
+        <li><a href="#idoso" class="sumario-item">🧓 Idoso</a></li>
+        <li>
+          <a href="#intensivos" class="sumario-item">🏥 Cuidados Intensivos</a>
+        </li>
+        <li><a href="#extras" class="sumario-item">🧩 Extras</a></li>
+      </ul>
+    </nav>
+
     <main>
-      <section>
-        <section>
-          <h2>💀 Anatomia</h2>
-          <p>
-            Estudo dos sistemas do corpo humano: estruturas, funcionamento e
-            relações, com foco em resumos detalhados e ferramentas de fixação.
-          </p>
+      <!-- Anatomia -->
+      <section id="anatomia">
+        <h2>💀 Anatomia</h2>
+        <p>Estudo dos sistemas do corpo humano e suas funções.</p>
+        <div class="card-container">
+          <a href="conteudos/sistema-circulatorio/index.html" class="card">
+            <h3>❤️ Sistema Circulatório</h3>
+            <p>Coração, circulação e sistema elétrico com quiz interativo.</p>
+          </a>
+        </div>
+      </section>
 
-          <div class="card-container">
-            <a href="conteudos/sistema-circulatorio/index.html" class="card">
-              <h3>❤️ Sistema Circulatório</h3>
-              <p>
-                Detalhes sobre o coração, válvulas, pequena e grande circulação,
-                e o sistema elétrico do coração, com quiz interativo.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>🌎 Saúde Coletiva</h2>
-          <p>
-            Conceitos de saúde pública e o papel do técnico em enfermagem na
-            promoção, prevenção e educação em saúde.
-          </p>
+      <!-- Saúde Coletiva -->
+      <section id="saude-coletiva">
+        <h2>🌎 Saúde Coletiva</h2>
+        <p>Promoção da saúde, prevenção e ações educativas.</p>
+        <div class="card-container">
+          <a href="conteudos/saude-coletiva/index.html" class="card">
+            <h3>🌱 Saúde Coletiva II</h3>
+            <p>
+              Processo saúde-doença, determinantes sociais e políticas públicas.
+            </p>
+          </a>
+        </div>
+      </section>
 
-          <div class="card-container">
-            <a href="conteudos/saude-coletiva/index.html" class="card">
-              <h3>🌱 Saúde Coletiva II</h3>
-              <p>
-                Resumo sobre teorias do processo saúde-doença, determinantes
-                sociais, políticas públicas e prevenção.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>📋 Fundamentos da Enfermagem</h2>
-          <div class="card-container">
-            <a href="conteudos/pgrss/index.html" class="card">
-              <h3>♻️ PGRSS</h3>
-              <p>
-                Plano de Gerenciamento de Resíduos Sólidos em Saúde: princípios,
-                etapas, classificação e legislação aplicável.
-              </p>
-            </a>
-            <a href="conteudos/ataduras-bandagens/index.html" class="card">
-              <h3>🩹 Ataduras e Bandagens</h3>
-              <p>
-                Conceitos e técnicas essenciais de aplicação e imobilização.
-              </p>
-            </a>
+      <!-- Fundamentos -->
+      <section id="fundamentos">
+        <h2>📋 Fundamentos da Enfermagem</h2>
+        <div class="card-container">
+          <a href="conteudos/pgrss/index.html" class="card">
+            <h3>♻️ PGRSS</h3>
+            <p>Gerenciamento de resíduos: etapas, tipos e normas.</p>
+          </a>
 
-            <a href="conteudos/preparo-leitos/index.html" class="card">
-              <h3>🛏️ Preparo de Leitos</h3>
-              <p>
-                Técnicas de arrumação e higienização de leitos para conforto e
-                segurança do paciente.
-              </p>
-            </a>
+          <a href="conteudos/termos-tecnicos/index.html" class="card">
+            <h3>📘 Termos Técnicos</h3>
+            <p>Glossário rápido e minigame para fixação de conceitos.</p>
+          </a>
 
-            <a href="conteudos/higiene-conforto/index.html" class="card">
-              <h3>🛁 Higiene e Conforto</h3>
-              <p>
-                Procedimentos de banho, higiene oral e cuidados gerais para
-                promover bem-estar.
-              </p>
-            </a>
+          <a href="conteudos/ataduras-bandagens/index.html" class="card">
+            <h3>🩹 Ataduras e Bandagens</h3>
+            <p>Técnicas básicas de aplicação e imobilização.</p>
+          </a>
 
-            <a href="conteudos/ecg/index.html" class="card">
-              <h3>🫀 Eletrocardiograma (ECG)</h3>
-              <p>Simulador 3D interativo para posicionamento de eletrodos.</p>
-            </a>
+          <a href="conteudos/mecanica-corporal/index.html" class="card">
+            <h3>🏥 Mecânica Corporal</h3>
+            <p>Postura, ergonomia e segurança na movimentação do paciente.</p>
+          </a>
 
-            <a href="conteudos/tipagem-sanguinea/index.html" class="card">
-              <h3>🩸 Tipagem Sanguínea</h3>
-              <p>Teste seus conhecimentos de doação e compatibilidade.</p>
-            </a>
-          </div>
-        </section>
+          <a href="conteudos/medidas-conforto-posicoes/index.html" class="card">
+            <h3>🧭 Medidas de Conforto e Posições</h3>
+            <p>Posicionamento e conforto físico e emocional do paciente.</p>
+          </a>
 
-        <section>
-          <h2>🧪 Farmacologia</h2>
-          <div class="card-container">
-            <a href="conteudos/calculo-medicamentos/index.html" class="card">
-              <h3>➗ Cálculo de Medicamentos</h3>
-              <p>
-                Calculadoras de gotejamento, proporção e exercícios práticos.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>👶 Saúde da Criança e do Adolescente</h2>
-          <p>
-            Conteúdos sobre o cuidado integral à criança: desenvolvimento,
-            parto, amamentação e crescimento saudável.
-          </p>
+          <a href="conteudos/preparo-leitos/index.html" class="card">
+            <h3>🛏️ Preparo de Leitos</h3>
+            <p>
+              Arrumação e higienização seguras para o bem-estar do paciente.
+            </p>
+          </a>
 
-          <div class="card-container">
-            <a href="conteudos/saude-crianca/index.html" class="card">
-              <h3>👶 Enfermagem em Saúde da Criança</h3>
-              <p>
-                Guia com resumo das aulas: gestação, parto, cuidados com o
-                recém-nascido, aleitamento, vínculo e desenvolvimento infantil.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>🧓 Saúde do Idoso</h2>
-          <p>
-            Cuidados ao idoso: prevenção de doenças, manutenção da autonomia e
-            bem-estar.
-          </p>
+          <a href="conteudos/higiene-conforto/index.html" class="card">
+            <h3>🛁 Higiene e Conforto</h3>
+            <p>Banho, higiene oral e cuidados básicos de conforto.</p>
+          </a>
 
-          <div class="card-container">
-            <a href="conteudos/saude-idoso/index.html" class="card">
-              <h3>🧓 Enfermagem em Saúde do Idoso</h3>
-              <p>
-                Alterações do envelhecimento e estratégias para independência e
-                qualidade de vida.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>🏥 Cuidados Intensivos</h2>
-          <p>
-            Conteúdos sobre o cuidado ao paciente crítico: rotina da UTI,
-            avaliação neurológica e aplicação prática da Escala de Glasgow.
-          </p>
+          <a href="conteudos/ecg/index.html" class="card">
+            <h3>🫀 Eletrocardiograma (ECG)</h3>
+            <p>Simulador 3D para treino de posicionamento dos eletrodos.</p>
+          </a>
 
-          <div class="card-container">
-            <a href="conteudos/cuidados-intensivos/index.html" class="card">
-              <h3>🏥 Cuidados Intensivos</h3>
-              <p>
-                Resumo da rotina da UTI, equipe multiprofissional e checklist
-                SUSPEITA PARA O BEM.
-              </p>
-            </a>
+          <a href="conteudos/tipagem-sanguinea/index.html" class="card">
+            <h3>🩸 Tipagem Sanguínea</h3>
+            <p>Teste seus conhecimentos sobre compatibilidade sanguínea.</p>
+          </a>
+        </div>
+      </section>
 
-            <a href="conteudos/escala-glasgow/index.html" class="card">
-              <h3>🧠 Escala de Coma de Glasgow</h3>
-              <p>
-                Entenda a avaliação do nível de consciência com exemplos e
-                exercícios práticos.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section>
-          <h2>🧩 Extras</h2>
-          <p>
-            Materiais complementares e ferramentas úteis para estudos e produção
-            acadêmica.
-          </p>
+      <!-- Farmacologia -->
+      <section id="farmacologia">
+        <h2>🧪 Farmacologia</h2>
+        <p>Aprenda cálculos e técnicas de administração de medicamentos.</p>
+        <div class="card-container">
+          <a href="conteudos/calculo-medicamentos/index.html" class="card">
+            <h3>➗ Cálculo de Medicamentos</h3>
+            <p>Ferramentas e exercícios de gotejamento e proporção.</p>
+          </a>
+        </div>
+      </section>
 
-          <div class="card-container">
-            <a href="conteudos/latex-overleaf/index.html" class="card">
-              <h3>📚 LaTeX e Overleaf</h3>
-              <p>
-                Automatize a formatação de trabalhos acadêmicos com o modelo do
-                IFMG no Overleaf.
-              </p>
-            </a>
-          </div>
-        </section>
+      <!-- Saúde da Criança -->
+      <section id="crianca">
+        <h2>👶 Saúde da Criança e do Adolescente</h2>
+        <p>Cuidado integral desde o nascimento até a adolescência.</p>
+        <div class="card-container">
+          <a href="conteudos/saude-crianca/index.html" class="card">
+            <h3>👶 Enfermagem em Saúde da Criança</h3>
+            <p>
+              Gestação, parto, cuidados com o bebê e desenvolvimento infantil.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Saúde do Idoso -->
+      <section id="idoso">
+        <h2>🧓 Saúde do Idoso</h2>
+        <p>Promoção da autonomia e qualidade de vida na terceira idade.</p>
+        <div class="card-container">
+          <a href="conteudos/saude-idoso/index.html" class="card">
+            <h3>🧓 Enfermagem em Saúde do Idoso</h3>
+            <p>Alterações do envelhecimento e cuidados essenciais.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Cuidados Intensivos -->
+      <section id="intensivos">
+        <h2>🏥 Cuidados Intensivos</h2>
+        <p>Atendimento e monitoramento de pacientes críticos.</p>
+        <div class="card-container">
+          <a href="conteudos/cuidados-intensivos/index.html" class="card">
+            <h3>🏥 Cuidados Intensivos</h3>
+            <p>
+              Rotina da UTI, equipe multiprofissional e protocolos clínicos.
+            </p>
+          </a>
+
+          <a href="conteudos/escala-glasgow/index.html" class="card">
+            <h3>🧠 Escala de Coma de Glasgow</h3>
+            <p>Avaliação prática do nível de consciência do paciente.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Extras -->
+      <section id="extras">
+        <h2>🧩 Extras</h2>
+        <p>Ferramentas e materiais complementares de estudo.</p>
+        <div class="card-container">
+          <a href="conteudos/latex-overleaf/index.html" class="card">
+            <h3>📚 LaTeX e Overleaf</h3>
+            <p>Modelos do IFMG para automatizar seus trabalhos acadêmicos.</p>
+          </a>
+        </div>
       </section>
     </main>
+
     <footer>
       <p>
+        <a href="#sumario" class="voltar">⬆ Voltar ao sumário</a><br />
         Playground da Enfermagem - 2025 <br />
         Romário Coimbra
       </p>

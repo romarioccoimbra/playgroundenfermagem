@@ -147,3 +147,69 @@ footer {
     padding: 3rem;
   }
 }
+
+/* ======== SUMÁRIO (ÍNDICE) ======== */
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar no sumário */
+}
+
+#sumario {
+  width: 90%;
+  max-width: 1000px;
+  margin: 1.5rem auto 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+
+#sumario .sumario-titulo {
+  color: #00796b;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  border-left: 5px solid #26a69a;
+  padding-left: 0.5rem;
+}
+
+#sumario .sumario-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+#sumario .sumario-item {
+  display: inline-block;
+  text-decoration: none;
+  color: #00796b;
+  background: #f2fbfa; /* leve variação do seu background */
+  border: 1px solid #26a69a;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px; /* “pill” */
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s;
+}
+
+#sumario .sumario-item:hover {
+  background: #e0f2f1;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Melhor âncora: evita que o título fique colado no topo ao rolar */
+section[id] {
+  scroll-margin-top: 16px;
+}
+
+/* Responsividade: mantém coerência com suas quebras */
+@media (min-width: 600px) {
+  #sumario .sumario-item {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  #sumario {
+    padding: 1.2rem 1.4rem;
+  }
+}
