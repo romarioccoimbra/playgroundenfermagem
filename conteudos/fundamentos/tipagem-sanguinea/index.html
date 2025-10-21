@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipagem Sanguínea e Prática</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <style>
+      /* Estilos específicos para a página de Tipagem Sanguínea */
+
+      /* NOVO: Wrapper para forçar rolagem em telas pequenas (Tabela Teórica) */
+      .table-wrapper {
+        overflow-x: auto;
+        margin: 20px 0; /* Espaçamento da tabela */
+      }
+
+      /* Estilo da tabela teórica */
+      .content-page table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 550px;
+        font-size: 0.85rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .content-page th,
+      .content-page td {
+        border: 1px solid #ccc;
+        padding: 8px 4px;
+        text-align: center;
+      }
+
+      .content-page th {
+        background-color: #f0f0f0;
+        color: #333;
+        font-weight: bold;
+      }
+
+      /* Estilos do Jogo de Prática (mobile-first) */
+
+      .pratica-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .section-pratica {
+        background: #f7f7f7;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        /* MOBILE FIRST: Permite rolagem horizontal por padrão */
+        overflow-x: auto;
+      }
+
+      .section-pratica table {
+        border-collapse: collapse;
+        margin-top: 10px;
+        min-width: 350px;
+        font-size: 0.85rem;
+      }
+
+      .section-pratica th,
+      .section-pratica td {
+        padding: 4px;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      /* NOVO: Regra para estreitar a primeira coluna da tabela de prática */
+      .section-pratica tr td:first-child {
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+      }
+
+      /* AJUSTES AQUI para ULTRA-COMPACTAR o espaço vertical da área arrastável */
+      .draggables {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+        margin: 3px 0;
+        padding: 3px;
+        background-color: #e0f2f1;
+        border-radius: 8px;
+      }
+
+      .draggable {
+        padding: 3px 8px;
+        background-color: #00796b;
+        color: white;
+        border-radius: 6px;
+        cursor: grab;
+        user-select: none;
+        font-size: 13px;
+      }
+      /* FIM DOS AJUSTES DE COMPACTAÇÃO */
+
+      .dropzone {
+        min-height: 36px;
+        padding: 5px;
+        background-color: #fff;
+        border: 1px dashed #ccc;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+      }
+
+      .dropzone.correct {
+        background-color: #d4edda;
+        border: 2px solid #28a745;
+      }
+
+      .dropzone.wrong {
+        background-color: #f8d7da;
+        border: 2px solid #dc3545;
+      }
+
+      .dropzone span.tipo {
+        padding: 4px 8px;
+        background-color: #6c757d;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        color: green;
+        font-weight: bold;
+      }
+
+      #limpar {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff4136;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      #limpar:hover {
+        background-color: #e00;
+      }
+
+      /* Layout em Desktop (Sobrescreve o mobile) */
+      @media (min-width: 768px) {
+        .pratica-container {
+          flex-direction: row; /* DESKTOP: Coloca lado a lado */
+          justify-content: space-around;
+          align-items: flex-start;
+          gap: 20px;
+        }
+
+        .section-pratica {
+          overflow-x: hidden; /* DESKTOP: Não precisa de rolagem aqui */
+          width: 100%;
+          max-width: 350px;
+        }
+
+        .section-pratica table {
+          min-width: auto; /* DESKTOP: Permite a tabela se ajustar */
+        }
+
+        .draggables {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          max-width: 140px;
+          margin: auto;
+        }
+
+        .section-pratica h3 {
+          text-align: center;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🩸 Tipagem Sanguínea</h1>
+      <nav>
+        <a href="../../../index.html" class="voltar">🏠 Início</a>
+        <a href="../index.html" class="voltar">📖 Fundamentos</a>
+      </nav>
+    </header>
+
+    <main class="content-page">
+      <article>
+        <h2>🩸 Tipagem Sanguínea</h2>
+        <p>
+          O tipo sanguíneo é uma classificação que identifica os
+          <strong>antígenos</strong> presentes na superfície das hemácias
+          (glóbulos vermelhos) e os <strong>anticorpos</strong> presentes no
+          plasma.
+        </p>
+
+        <h3>Grupos Sanguíneos ABO</h3>
+        <p>Existem 4 principais grupos sanguíneos do sistema ABO:</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Grupo</th>
+                <th>Antígeno na hemácia</th>
+                <th>Anticorpo no plasma</th>
+                <th>Pode receber sangue de</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>A</strong></td>
+                <td>A</td>
+                <td>Anti-B</td>
+                <td>A e O</td>
+              </tr>
+              <tr>
+                <td><strong>B</strong></td>
+                <td>B</td>
+                <td>Anti-A</td>
+                <td>B e O</td>
+              </tr>
+              <tr>
+                <td><strong>AB</strong></td>
+                <td>A e B</td>
+                <td>Não tem</td>
+                <td>A, B, AB e O (receptor universal)</td>
+              </tr>
+              <tr>
+                <td><strong>O</strong></td>
+                <td>Não tem</td>
+                <td>Anti-A e Anti-B</td>
+                <td>O</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Fator Rh</h3>
+        <p>
+          Além do sistema ABO, o <strong>fator Rh (Rhesus)</strong> é
+          importante. Se a pessoa tem o antígeno D, ela é <strong>Rh+</strong>;
+          se não, é <strong>Rh-</strong>.
+        </p>
+        <ul>
+          <li><strong>Rh+</strong> pode receber sangue Rh+ ou Rh-.</li>
+          <li>
+            <strong>Rh-</strong> deve receber apenas sangue Rh- para evitar
+            reações.
+          </li>
+        </ul>
+
+        <h3>Exemplo de Cálculo de Compatibilidade</h3>
+        <p>
+          Cálculo para doação de sangue para uma pessoa <strong>A+</strong>:
+        </p>
+        <ul>
+          <li>Pode receber sangue dos grupos: A+ e A-, O+ e O-</li>
+          <li>Por ser Rh+, pode receber tanto Rh+ quanto Rh-</li>
+        </ul>
+        <p>Logo, os tipos compatíveis são: <strong>A+, A-, O+, O-</strong></p>
+
+        <hr />
+
+        <h2>Prática: Teste de Compatibilidade</h2>
+
+        <div class="pratica-container">
+          <div class="section-pratica">
+            <h3>Pode Doar Para</h3>
+            <table>
+              <tbody id="doar-tabela"></tbody>
+            </table>
+          </div>
+
+          <div class="draggables" id="tipos"></div>
+
+          <div class="section-pratica">
+            <h3>Pode Receber De</h3>
+            <table>
+              <tbody id="receber-tabela"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <button id="limpar">Limpar Respostas</button>
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        Playground da Enfermagem - 2025 <br />
+        Romário Coimbra
+      </p>
+    </footer>
+
+    <script>
+      // LÓGICA DO JOGO DRAG-AND-DROP (Mantida do seu código original)
+      const tipos = ["O−", "O+", "A−", "A+", "B−", "B+", "AB−", "AB+"];
+
+      const doacoes = {
+        "O−": ["O−", "O+", "A−", "A+", "B−", "B+", "AB−", "AB+"],
+        "O+": ["O+", "A+", "B+", "AB+"],
+        "A−": ["A−", "A+", "AB−", "AB+"],
+        "A+": ["A+", "AB+"],
+        "B−": ["B−", "B+", "AB−", "AB+"],
+        "B+": ["B+", "AB+"],
+        "AB−": ["AB−", "AB+"],
+        "AB+": ["AB+"],
+      };
+
+      const recebimentos = {
+        "O−": ["O−"],
+        "O+": ["O−", "O+"],
+        "A−": ["O−", "A−"],
+        "A+": ["O−", "O+", "A−", "A+"],
+        "B−": ["O−", "B−"],
+        "B+": ["O−", "O+", "B−", "B+"],
+        "AB−": ["O−", "A−", "B−", "AB−"],
+        "AB+": ["O−", "O+", "A−", "A+", "B−", "B+", "AB−", "AB+"],
+      };
+
+      const tiposContainer = document.getElementById("tipos");
+      tipos.forEach((tipo) => {
+        const div = document.createElement("div");
+        div.textContent = tipo;
+        div.className = "draggable";
+        div.draggable = true;
+        div.dataset.type = tipo;
+        tiposContainer.appendChild(div);
+      });
+
+      function criarTabela(id, dados, tipo) {
+        const tbody = document.getElementById(id);
+        tbody.innerHTML = "";
+        Object.entries(dados).forEach(([tipoBase, respostas]) => {
+          const tr = document.createElement("tr");
+          const tdTipo = document.createElement("td");
+          tdTipo.textContent = tipoBase;
+          tr.appendChild(tdTipo);
+
+          const tdDrop = document.createElement("td");
+          const dropzone = document.createElement("div");
+          dropzone.className = "dropzone";
+          dropzone.dataset.para = tipoBase;
+          dropzone.dataset.tipo = tipo;
+          dropzone.dataset.resposta = JSON.stringify(respostas.sort());
+          tdDrop.appendChild(dropzone);
+          tr.appendChild(tdDrop);
+          tbody.appendChild(tr);
+        });
+      }
+
+      criarTabela("doar-tabela", doacoes, "doar");
+      criarTabela("receber-tabela", recebimentos, "receber");
+
+      document.querySelectorAll(".draggable").forEach((el) => {
+        el.addEventListener("dragstart", (ev) => {
+          ev.dataTransfer.setData("text/plain", ev.target.dataset.type);
+        });
+      });
+
+      document.addEventListener("dragover", (ev) => ev.preventDefault());
+
+      document.querySelectorAll(".dropzone").forEach((zone) => {
+        zone.addEventListener("drop", (ev) => {
+          ev.preventDefault();
+          const tipo = ev.dataTransfer.getData("text/plain");
+          if (!tipo) return;
+
+          const existente = Array.from(zone.children).find(
+            (el) => el.textContent === tipo && el.classList.contains("tipo")
+          );
+          if (!existente) {
+            const span = document.createElement("span");
+            span.textContent = tipo;
+            span.className = "tipo";
+            span.addEventListener("click", () => {
+              span.remove();
+              validarDropzone(zone);
+            });
+            zone.appendChild(span);
+          }
+
+          validarDropzone(zone);
+        });
+      });
+
+      function validarDropzone(zone) {
+        const resposta = JSON.parse(zone.dataset.resposta);
+        const inseridos = Array.from(zone.querySelectorAll("span.tipo"))
+          .map((el) => el.textContent)
+          .sort();
+        const checkExistente = zone.querySelector(".checkmark");
+
+        if (JSON.stringify(resposta) === JSON.stringify(inseridos)) {
+          zone.classList.add("correct");
+          zone.classList.remove("wrong");
+          if (!checkExistente) {
+            const check = document.createElement("span");
+            check.className = "checkmark";
+            check.textContent = "✓";
+            zone.appendChild(check);
+          }
+        } else {
+          zone.classList.remove("correct");
+          zone.classList.add("wrong");
+          if (checkExistente) checkExistente.remove();
+        }
+      }
+
+      document.getElementById("limpar").addEventListener("click", () => {
+        document.querySelectorAll(".dropzone").forEach((zone) => {
+          zone.innerHTML = "";
+          zone.classList.remove("correct", "wrong");
+        });
+      });
+    </script>
+  </body>
+</html>

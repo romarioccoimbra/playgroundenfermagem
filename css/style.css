@@ -213,3 +213,40 @@ section[id] {
     padding: 1.2rem 1.4rem;
   }
 }
+
+/* --- Garantir que o footer fique no fim da página --- */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* --- Botões de navegação no topo --- */
+.navegacao-topo {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.navegacao-topo a {
+  background-color: var(--cor-principal, #0066cc);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.navegacao-topo a:hover {
+  background-color: #004a99;
+}
