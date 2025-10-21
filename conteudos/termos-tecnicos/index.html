@@ -18,6 +18,51 @@
       <article>
         <!-- Seção: Sinais e sintomas gerais -->
         <section>
+          <!-- Seção: Minigame -->
+          <section id="minigame-termos">
+            <h2>🎲 Minigame: sorteie um termo e teste-se</h2>
+            <p>
+              Clique em <strong>“Sortear termo”</strong> para receber um termo
+              técnico aleatório. Pense no significado e, quando quiser, clique
+              em <strong>“Mostrar significado”</strong>.
+            </p>
+
+            <div class="card-container">
+              <div class="card" style="max-width: 720px; margin-inline: auto">
+                <div
+                  style="
+                    display: flex;
+                    gap: 0.5rem;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin-bottom: 0.75rem;
+                  "
+                >
+                  <button id="btnSortear" class="btn">🎲 Sortear termo</button>
+                  <button id="btnMostrar" class="btn" disabled>
+                    👀 Mostrar significado
+                  </button>
+                </div>
+
+                <div>
+                  <h3 style="margin-bottom: 0.25rem">🧩 Termo sorteado</h3>
+                  <p
+                    id="termoAtual"
+                    style="font-size: 1.1rem; font-weight: 600"
+                  >
+                    —
+                  </p>
+                </div>
+
+                <hr style="margin: 0.75rem 0" />
+
+                <div>
+                  <h3 style="margin-bottom: 0.25rem">✅ Significado</h3>
+                  <p id="significado" aria-live="polite">—</p>
+                </div>
+              </div>
+            </div>
+          </section>
           <h2>🩺 Sinais e sintomas gerais</h2>
           <ul class="lista-termos">
             <li>
@@ -367,49 +412,6 @@
             border-radius: 4px;
           "
         />
-
-        <!-- Seção: Minigame -->
-        <section id="minigame-termos">
-          <h2>🎲 Minigame: sorteie um termo e teste-se</h2>
-          <p>
-            Clique em <strong>“Sortear termo”</strong> para receber um termo
-            técnico aleatório. Pense no significado e, quando quiser, clique em
-            <strong>“Mostrar significado”</strong>.
-          </p>
-
-          <div class="card-container">
-            <div class="card" style="max-width: 720px; margin-inline: auto">
-              <div
-                style="
-                  display: flex;
-                  gap: 0.5rem;
-                  flex-wrap: wrap;
-                  align-items: center;
-                  margin-bottom: 0.75rem;
-                "
-              >
-                <button id="btnSortear" class="btn">🎲 Sortear termo</button>
-                <button id="btnMostrar" class="btn" disabled>
-                  👀 Mostrar significado
-                </button>
-              </div>
-
-              <div>
-                <h3 style="margin-bottom: 0.25rem">🧩 Termo sorteado</h3>
-                <p id="termoAtual" style="font-size: 1.1rem; font-weight: 600">
-                  —
-                </p>
-              </div>
-
-              <hr style="margin: 0.75rem 0" />
-
-              <div>
-                <h3 style="margin-bottom: 0.25rem">✅ Significado</h3>
-                <p id="significado" aria-live="polite">—</p>
-              </div>
-            </div>
-          </div>
-        </section>
       </article>
     </main>
 
